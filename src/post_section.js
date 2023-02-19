@@ -1,10 +1,24 @@
 import styled from "styled-components"
-import logo from "./logo.svg"
+import logo from "./sans.png"
 
-const _post_title = styled.p``
-const _post_date = styled.p``
 const _post_thumbnail = styled.img``
-const _post_tag = styled.p``
+const _post_title = styled.p
+`
+    font-weight: 250;
+    color: #61DBFB;
+`
+const _post_date = styled.p
+`
+    font-style: italic;
+    font-weight: 200;
+    color: #000000;
+`
+const _post_tag = styled.p
+`
+    font-style: italic;
+    font-weight: bolder;
+    color: #999999;
+`
 
 function _post_normal_frame(props)
 {
@@ -36,51 +50,44 @@ function _post_normal()
     );
 }
 
-const _post_normal_style = styled.div
+const _post_normal_frame_text_style = styled.div
 `
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-
-    ${_post_thumbnail}
+    padding: 0 0 0 0.5em;
+    ${_post_title}
     {
-        height: 80%;
+        margin: 0;
+        font-size: 1.8em;
+    }
+
+    ${_post_tag}
+    {
+        margin: 0;
     }
 `
 
 const _post_normal_frame_style = styled.div
 `
-    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 400px;
+    flex-basis: 300px;
+    flex-shrink: 0;
     width: 30%;
-    margin: 1%;
-    border: 0.3rem solid #32a1ce;
-    color: #110000;
+    border-bottom: solid #61DBFB 0.15em;
+    padding: 0.5em 1em;
+    margin: 3em 1.5em;
+    ${_post_thumbnail}
+    {
+        width: 100%;
+    }
 `
 
-const _post_normal_frame_text_style = styled.div
+const _post_normal_style = styled.div
 `
-    box-sizing: border-box;
-    padding: 1em 1em;
-    line-height: 1.5em;
-
-    ${_post_title}
-    {
-        font-size: 2em;
-        color: #00AABB;
-        margin: 0 0 15% 0;
-    }
-    ${_post_date}
-    {
-        margin: 0;
-        color: #444444;
-    }
-    ${_post_tag}
-    {
-        margin: 0;
-        color: #656565;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em 1em;
 `
 
 function _post_fixed_frame(props)
@@ -97,6 +104,51 @@ function _post_fixed_frame(props)
     )
 }
 
+const _post_fixed_frame_text_style = styled.div
+`
+    box-sizing: border-box;
+    padding: 1em 0;
+    ${_post_title}
+    {
+        font-size: 3em;
+        margin: 0;
+    }
+    
+    ${_post_date}
+    {
+        font-size: 1em;
+    }
+`
+
+const _post_fixed_frame_style = styled.div
+`
+    display: flex;
+    border: outset #61DBFB;
+    margin: 1em 1em;
+    height: 200px;
+    flex-basis: 550px;
+    flex-shrink: 0;
+    justify-content: flex-start;
+
+    ${_post_thumbnail}
+    {
+        margin: 0.5em 1.5em 0.5em 0.5em;
+        max-width: 100%;
+    }
+`
+
+const _post_fixed_style = styled.div
+`
+    box-sizing: border-box;
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 1;
+    width: 100%;
+    height: 50%;
+    flex-wrap: wrap;
+    justify-content: center;
+`
+
 function _post_fixed()
 {
     return (
@@ -109,54 +161,26 @@ function _post_fixed()
     )
 }
 
-const _post_fixed_style = styled.div
+const _post_hbar = styled.hr
 `
-    display: flex;
     width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
-    ${_post_thumbnail}
-    {
-        height: 100%;
-    }
+    height: 0.15em;
+    border: none;
+    justify-content: center;
+    background-color: #61DBFB;
 `
 
-const _post_fixed_frame_style = styled.div
+const _post_style = styled.section
 `
-    width: 45%;
+    margin: 0 0 0 20vw;
+    padding: 2% 5%;
     box-sizing: border-box;
-    margin: 0.5%;
-    height: 160px;
-    border: 0.3rem solid #32a1ce;
-    color: #110000;
-`
-
-const _post_fixed_frame_text_style = styled.div
-`
-    float: right;
-    box-sizing: border-box;
-    padding: 1em 0px;
-    width: 50%;
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
     height: 100%;
-    line-height: 1.5em;
-
-    ${_post_title}
-    {
-        font-size: 2em;
-        color: #00AABB;
-        margin: 0 0 15% 0;
-    }
-    ${_post_date}
-    {
-        margin: 0;
-        color: #444444;
-    }
-    ${_post_tag}
-    {
-        margin: 0;
-        color: #656565;
-    }
+    justify-content: flex-end;
+    flex-wrap: wrap;
 `
 
 function _post()
@@ -169,25 +193,5 @@ function _post()
         </_post_style>
     )
 }
-
-const _post_hbar = styled.hr
-`
-    height: 1px;
-    width: 100%; // <-- ???
-    color: #000000; // <-- ???
-`
-
-const _post_style = styled.section
-`
-    display: flex;
-    box-sizing: border-box;
-    padding: 3% 4%;
-    margin: 0 2vw;
-    width: 75vw;
-    height: 100vh;
-    float: right;
-    // background-color: #CCCCCC;
-    flex-wrap: wrap;
-`
 
 export default _post;
