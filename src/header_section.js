@@ -15,6 +15,7 @@ const _header_title_container = styled.div
     font-size: 2vw;
     line-height: 150%;
     color: #FFFFFF;
+    height: 4em;
 `
 
 const _header_hbar = styled.hr
@@ -31,7 +32,7 @@ const _header_redirection_container = styled.div
 `
     box-sizing: border_box;
     width: 100%;
-    height: 6em;
+    height: 3em;
 `
     
 const _header_container = styled.section
@@ -45,7 +46,6 @@ const _header_container = styled.section
     height: 100vh;
     padding: 1% 2%;
     background-color: #333333;
-    line-height: 150%;
 `
 
 function _header()

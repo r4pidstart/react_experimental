@@ -70,8 +70,8 @@ const _post_normal_frame_container = styled.div
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    height: 400px;
-    flex-basis: 300px;
+    height: 350px;
+    flex-basis: 250px;
     flex-shrink: 0;
     width: 30%;
     border-bottom: solid #61DBFB 0.15em;
@@ -126,8 +126,8 @@ const _post_fixed_frame_container = styled.div
     display: flex;
     border: outset #61DBFB;
     margin: 1em 1em;
-    height: 200px;
-    flex-basis: 550px;
+    height: 170px;
+    flex-basis: 400px;
     flex-shrink: 0;
     justify-content: flex-start;
 
