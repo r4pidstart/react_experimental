@@ -23,14 +23,14 @@ const _post_tag = styled.p
 function _post_normal_frame(props)
 {
     return (
-        <_post_normal_frame_style>
+        <_post_normal_frame_container>
             <_post_thumbnail src={logo}></_post_thumbnail>
-            <_post_normal_frame_text_style>
+            <_post_normal_frame_text_container>
                 <_post_title>{props.content}</_post_title>
                 <_post_date>01-02-2001</_post_date>
                 <_post_tag>#sans</_post_tag>
-            </_post_normal_frame_text_style>
-        </_post_normal_frame_style>
+            </_post_normal_frame_text_container>
+        </_post_normal_frame_container>
     )
 }
 
@@ -44,13 +44,13 @@ function _post_normal()
         );
     }
     return (
-        <_post_normal_style>
+        <_post_normal_container>
             {ret}
-        </_post_normal_style>
+        </_post_normal_container>
     );
 }
 
-const _post_normal_frame_text_style = styled.div
+const _post_normal_frame_text_container = styled.div
 `
     padding: 0 0 0 0.5em;
     ${_post_title}
@@ -65,7 +65,7 @@ const _post_normal_frame_text_style = styled.div
     }
 `
 
-const _post_normal_frame_style = styled.div
+const _post_normal_frame_container = styled.div
 `
     display: flex;
     align-items: center;
@@ -83,7 +83,7 @@ const _post_normal_frame_style = styled.div
     }
 `
 
-const _post_normal_style = styled.div
+const _post_normal_container = styled.div
 `
     display: flex;
     flex-wrap: wrap;
@@ -94,18 +94,18 @@ const _post_normal_style = styled.div
 function _post_fixed_frame(props)
 {
     return (
-        <_post_fixed_frame_style>
+        <_post_fixed_frame_container>
             <_post_thumbnail src={logo}></_post_thumbnail>
-            <_post_fixed_frame_text_style>
+            <_post_fixed_frame_text_container>
                 <_post_title>{props.content}</_post_title>
                 <_post_date>01-01-2001</_post_date>
                 <_post_tag>#wa</_post_tag>
-            </_post_fixed_frame_text_style>
-        </_post_fixed_frame_style>
+            </_post_fixed_frame_text_container>
+        </_post_fixed_frame_container>
     )
 }
 
-const _post_fixed_frame_text_style = styled.div
+const _post_fixed_frame_text_container = styled.div
 `
     box-sizing: border-box;
     padding: 1em 0;
@@ -121,7 +121,7 @@ const _post_fixed_frame_text_style = styled.div
     }
 `
 
-const _post_fixed_frame_style = styled.div
+const _post_fixed_frame_container = styled.div
 `
     display: flex;
     border: outset #61DBFB;
@@ -138,7 +138,7 @@ const _post_fixed_frame_style = styled.div
     }
 `
 
-const _post_fixed_style = styled.div
+const _post_fixed_container = styled.div
 `
     box-sizing: border-box;
     display: flex;
@@ -153,12 +153,12 @@ const _post_fixed_style = styled.div
 function _post_fixed()
 {
     return (
-        <_post_fixed_style>
-            <_post_fixed_frame content="S"></_post_fixed_frame>
-            <_post_fixed_frame content="A"></_post_fixed_frame>
-            <_post_fixed_frame content="N"></_post_fixed_frame>
-            <_post_fixed_frame content="S"></_post_fixed_frame>
-        </_post_fixed_style>
+        <_post_fixed_container>
+            <_post_fixed_frame content="Sans"></_post_fixed_frame>
+            <_post_fixed_frame content="sAns"></_post_fixed_frame>
+            <_post_fixed_frame content="saNs"></_post_fixed_frame>
+            <_post_fixed_frame content="sanS"></_post_fixed_frame>
+        </_post_fixed_container>
     )
 }
 
@@ -171,7 +171,7 @@ const _post_hbar = styled.hr
     background-color: #61DBFB;
 `
 
-const _post_style = styled.section
+const _post_container = styled.section
 `
     margin: 0 0 0 20vw;
     padding: 2% 5%;
@@ -187,11 +187,11 @@ const _post_style = styled.section
 function _post()
 {
     return (
-        <_post_style>
+        <_post_container>
             <_post_fixed></_post_fixed>
             <_post_hbar></_post_hbar>
             <_post_normal></_post_normal>
-        </_post_style>
+        </_post_container>
     )
 }
 

@@ -10,7 +10,7 @@ function _header_title()
     );
 }
 
-const _header_title_style = styled.div
+const _header_title_container = styled.div
 `
     font-size: 2vw;
     line-height: 150%;
@@ -27,14 +27,14 @@ const _header_logo = styled.img
     width: 25%;
 `
 
-const _header_redirection_style = styled.div
+const _header_redirection_container = styled.div
 `
     box-sizing: border_box;
     width: 100%;
     height: 6em;
 `
     
-const _header_style = styled.section
+const _header_container = styled.section
 `
     box-sizing: border-box;
     display: flex;
@@ -51,20 +51,20 @@ const _header_style = styled.section
 function _header()
 {
     return (
-        <_header_style>
-            <_header_title_style>
+        <_header_container>
+            <_header_title_container>
                 <_header_title></_header_title>
-            </_header_title_style>
+            </_header_title_container>
 
             <_header_hbar></_header_hbar>
             
-            <_header_redirection_style>
+            <_header_redirection_container>
                 <_header_logo src={logo}></_header_logo>
                 <_header_logo src={logo}></_header_logo>
                 <_header_logo src={logo}></_header_logo>
                 <_header_logo src={logo}></_header_logo>
-            </_header_redirection_style>
-        </_header_style>
+            </_header_redirection_container>
+        </_header_container>
     );
 }
 
