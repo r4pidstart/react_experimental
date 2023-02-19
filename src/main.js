@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import _header from "./header_section.js"
 import _post from "./post_section.js"
 
