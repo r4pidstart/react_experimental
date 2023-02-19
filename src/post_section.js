@@ -88,6 +88,7 @@ const _post_normal_style = styled.div
     display: flex;
     flex-wrap: wrap;
     margin: 1em 1em;
+    justify-content: center;
 `
 
 function _post_fixed_frame(props)
