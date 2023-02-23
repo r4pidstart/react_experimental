@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import logo from "./sans.png"
+import { Link } from 'react-router-dom';
 
 const _post_thumbnail = styled.img``
 const _post_title = styled.p
@@ -40,13 +41,12 @@ function _post_normal()
     for(let i=0; i<10; i++)
     {
         ret.push(
-                <_post_normal_frame content={i}></_post_normal_frame>
+            <Link to={`/post/${i}`}> <_post_normal_frame key={i} content={i}></_post_normal_frame> </Link>
+            // <_post_normal_frame content={i}></_post_normal_frame>
         );
     }
     return (
-        <_post_normal_container>
-            {ret}
-        </_post_normal_container>
+        <_post_normal_container> {ret} </_post_normal_container>
     );
 }
 
@@ -83,7 +83,7 @@ const _post_normal_frame_container = styled.div
     }
 `
 
-const _post_normal_container = styled.div
+const _post_normal_container = styled.li
 `
     display: flex;
     flex-wrap: wrap;
@@ -154,10 +154,14 @@ function _post_fixed()
 {
     return (
         <_post_fixed_container>
-            <_post_fixed_frame content="Sans"></_post_fixed_frame>
-            <_post_fixed_frame content="sAns"></_post_fixed_frame>
-            <_post_fixed_frame content="saNs"></_post_fixed_frame>
-            <_post_fixed_frame content="sanS"></_post_fixed_frame>
+            {/* <_post_fixed_frame key="01" content="Sans"></_post_fixed_frame>
+            <_post_fixed_frame key="02" content="sAns"></_post_fixed_frame>
+            <_post_fixed_frame key="03" content="saNs"></_post_fixed_frame>
+            <_post_fixed_frame key="04" content="sanS"></_post_fixed_frame> */}
+            <Link to="/post/3"> <_post_fixed_frame key="01" content="Sans3"></_post_fixed_frame> </Link>
+            <Link to="/post/4"> <_post_fixed_frame key="02" content="sAns4"></_post_fixed_frame> </Link>
+            <Link to="/post/5"> <_post_fixed_frame key="03" content="saNs5"></_post_fixed_frame> </Link>
+            <Link to="/post/6"> <_post_fixed_frame key="04" content="sanS6"></_post_fixed_frame> </Link>
         </_post_fixed_container>
     )
 }
@@ -171,7 +175,7 @@ const _post_hbar = styled.hr
     background-color: #61DBFB;
 `
 
-const _post_container = styled.section
+const _posts_container = styled.section
 `
     margin: 0 0 0 20vw;
     padding: 2% 5%;
@@ -179,20 +183,19 @@ const _post_container = styled.section
     display: flex;
     flex-direction: row;
     width: 80vw;
-    height: 100%;
     justify-content: flex-end;
     flex-wrap: wrap;
 `
 
-function _post()
+function _posts()
 {
     return (
-        <_post_container>
+        <_posts_container>
             <_post_fixed></_post_fixed>
             <_post_hbar></_post_hbar>
             <_post_normal></_post_normal>
-        </_post_container>
+        </_posts_container>
     )
 }
 
-export default _post;
+export default _posts;
